@@ -1,0 +1,160 @@
+-- Merging decision tree log ---
+manifest
+ADDED from C:\Users\cenec\Documents\GitHub\A-Tale-of-Heroes-PM-\A-Tale-of-Heros-Project\android\AndroidManifest.xml:2:1-25:12
+INJECTED from C:\Users\cenec\Documents\GitHub\A-Tale-of-Heroes-PM-\A-Tale-of-Heros-Project\android\AndroidManifest.xml:2:1-25:12
+INJECTED from C:\Users\cenec\Documents\GitHub\A-Tale-of-Heroes-PM-\A-Tale-of-Heros-Project\android\AndroidManifest.xml:2:1-25:12
+INJECTED from C:\Users\cenec\Documents\GitHub\A-Tale-of-Heroes-PM-\A-Tale-of-Heros-Project\android\AndroidManifest.xml:2:1-25:12
+MERGED from [com.android.support.constraint:constraint-layout:2.0.0-beta4] C:\Users\cenec\.gradle\caches\transforms-2\files-2.1\baf1e3e60b18e2658b0bce812188cebc\AndroidManifest.xml:2:1-11:12
+MERGED from [com.android.support:appcompat-v7:28.0.0] C:\Users\cenec\.gradle\caches\transforms-2\files-2.1\664a0fd663eaf3af1a1eddd8a9e1f07b\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-fragment:28.0.0] C:\Users\cenec\.gradle\caches\transforms-2\files-2.1\542dd67c044aaab37f6f4b3b32a8ff13\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:animated-vector-drawable:28.0.0] C:\Users\cenec\.gradle\caches\transforms-2\files-2.1\f31ec72c4340fd51698887f23dea9ad3\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-ui:28.0.0] C:\Users\cenec\.gradle\caches\transforms-2\files-2.1\46143dfa94cdc42401326782c9b5703f\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-utils:28.0.0] C:\Users\cenec\.gradle\caches\transforms-2\files-2.1\3848bf9850eb9039413149c53ccd5adc\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-vector-drawable:28.0.0] C:\Users\cenec\.gradle\caches\transforms-2\files-2.1\7913f1c19817e625d834926aaf3e768d\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:loader:28.0.0] C:\Users\cenec\.gradle\caches\transforms-2\files-2.1\4a0a4f7ee10184e96a26b19a60f6182a\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:viewpager:28.0.0] C:\Users\cenec\.gradle\caches\transforms-2\files-2.1\985864b96786ab3b9802e8bb5a1f9d35\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:coordinatorlayout:28.0.0] C:\Users\cenec\.gradle\caches\transforms-2\files-2.1\6301e4ccc6193945bf26d1b259f453fa\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:drawerlayout:28.0.0] C:\Users\cenec\.gradle\caches\transforms-2\files-2.1\d165c6335fef3b75f8fa00c86b2181fb\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:slidingpanelayout:28.0.0] C:\Users\cenec\.gradle\caches\transforms-2\files-2.1\bb160d33eef1e84dc713ba8de3ff9d16\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:customview:28.0.0] C:\Users\cenec\.gradle\caches\transforms-2\files-2.1\49ad02e98af2d1911fa5102fd7dcaf14\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:swiperefreshlayout:28.0.0] C:\Users\cenec\.gradle\caches\transforms-2\files-2.1\0cf9f6104be13b2f140de058ef4a02c2\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:asynclayoutinflater:28.0.0] C:\Users\cenec\.gradle\caches\transforms-2\files-2.1\f6bde033768e157a0e0d4b54b4612024\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-compat:28.0.0] C:\Users\cenec\.gradle\caches\transforms-2\files-2.1\002befe8d84159fb471564ce5d02f097\AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\cenec\.gradle\caches\transforms-2\files-2.1\bffdbea85b52bdbf29f88a7bdcaef733\AndroidManifest.xml:17:1-25:12
+MERGED from [com.android.support:cursoradapter:28.0.0] C:\Users\cenec\.gradle\caches\transforms-2\files-2.1\7b609e3c1cc4182389a8d77bbdda67a5\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:runtime:1.1.1] C:\Users\cenec\.gradle\caches\transforms-2\files-2.1\253f325d6743eac9980897dbc9c4f72c\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:documentfile:28.0.0] C:\Users\cenec\.gradle\caches\transforms-2\files-2.1\ac352deda70c7e40ae77e6df1bf14efb\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:localbroadcastmanager:28.0.0] C:\Users\cenec\.gradle\caches\transforms-2\files-2.1\693b40e10ecd02a7f2e58b34911cad9f\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:print:28.0.0] C:\Users\cenec\.gradle\caches\transforms-2\files-2.1\f5081d72b2baa40267ff9d008efbc2fc\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:viewmodel:1.1.1] C:\Users\cenec\.gradle\caches\transforms-2\files-2.1\be80fd4013bc4d887fc77730a84f7c62\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:livedata:1.1.1] C:\Users\cenec\.gradle\caches\transforms-2\files-2.1\e5328583dc2d0e9808d39cfc6a2a92e7\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:livedata-core:1.1.1] C:\Users\cenec\.gradle\caches\transforms-2\files-2.1\1f7b87d4c430e94799a26679a96758b3\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.core:runtime:1.1.1] C:\Users\cenec\.gradle\caches\transforms-2\files-2.1\4478674ddbb17b1fce69af8df6a2d688\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:interpolator:28.0.0] C:\Users\cenec\.gradle\caches\transforms-2\files-2.1\0368f8714bd88819caa74245803fa502\AndroidManifest.xml:17:1-22:12
+INJECTED from C:\Users\cenec\Documents\GitHub\A-Tale-of-Heroes-PM-\A-Tale-of-Heros-Project\android\AndroidManifest.xml:2:1-25:12
+INJECTED from C:\Users\cenec\Documents\GitHub\A-Tale-of-Heroes-PM-\A-Tale-of-Heros-Project\android\AndroidManifest.xml:2:1-25:12
+INJECTED from C:\Users\cenec\Documents\GitHub\A-Tale-of-Heroes-PM-\A-Tale-of-Heros-Project\android\AndroidManifest.xml:2:1-25:12
+	package
+		ADDED from C:\Users\cenec\Documents\GitHub\A-Tale-of-Heroes-PM-\A-Tale-of-Heros-Project\android\AndroidManifest.xml:3:5-29
+		INJECTED from C:\Users\cenec\Documents\GitHub\A-Tale-of-Heroes-PM-\A-Tale-of-Heros-Project\android\AndroidManifest.xml
+		INJECTED from C:\Users\cenec\Documents\GitHub\A-Tale-of-Heroes-PM-\A-Tale-of-Heros-Project\android\AndroidManifest.xml
+	android:versionName
+		INJECTED from C:\Users\cenec\Documents\GitHub\A-Tale-of-Heroes-PM-\A-Tale-of-Heros-Project\android\AndroidManifest.xml
+		ADDED from C:\Users\cenec\Documents\GitHub\A-Tale-of-Heroes-PM-\A-Tale-of-Heros-Project\android\AndroidManifest.xml:2:1-25:12
+		INJECTED from C:\Users\cenec\Documents\GitHub\A-Tale-of-Heroes-PM-\A-Tale-of-Heros-Project\android\AndroidManifest.xml
+	android:versionCode
+		INJECTED from C:\Users\cenec\Documents\GitHub\A-Tale-of-Heroes-PM-\A-Tale-of-Heros-Project\android\AndroidManifest.xml
+		ADDED from C:\Users\cenec\Documents\GitHub\A-Tale-of-Heroes-PM-\A-Tale-of-Heros-Project\android\AndroidManifest.xml:2:1-25:12
+		INJECTED from C:\Users\cenec\Documents\GitHub\A-Tale-of-Heroes-PM-\A-Tale-of-Heros-Project\android\AndroidManifest.xml
+	xmlns:android
+		ADDED from C:\Users\cenec\Documents\GitHub\A-Tale-of-Heroes-PM-\A-Tale-of-Heros-Project\android\AndroidManifest.xml:2:11-69
+application
+ADDED from C:\Users\cenec\Documents\GitHub\A-Tale-of-Heroes-PM-\A-Tale-of-Heros-Project\android\AndroidManifest.xml:5:5-23:19
+MERGED from [com.android.support.constraint:constraint-layout:2.0.0-beta4] C:\Users\cenec\.gradle\caches\transforms-2\files-2.1\baf1e3e60b18e2658b0bce812188cebc\AndroidManifest.xml:9:5-20
+MERGED from [com.android.support.constraint:constraint-layout:2.0.0-beta4] C:\Users\cenec\.gradle\caches\transforms-2\files-2.1\baf1e3e60b18e2658b0bce812188cebc\AndroidManifest.xml:9:5-20
+MERGED from [com.android.support:support-compat:28.0.0] C:\Users\cenec\.gradle\caches\transforms-2\files-2.1\002befe8d84159fb471564ce5d02f097\AndroidManifest.xml:22:5-94
+MERGED from [com.android.support:support-compat:28.0.0] C:\Users\cenec\.gradle\caches\transforms-2\files-2.1\002befe8d84159fb471564ce5d02f097\AndroidManifest.xml:22:5-94
+MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\cenec\.gradle\caches\transforms-2\files-2.1\bffdbea85b52bdbf29f88a7bdcaef733\AndroidManifest.xml:22:5-23:19
+MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\cenec\.gradle\caches\transforms-2\files-2.1\bffdbea85b52bdbf29f88a7bdcaef733\AndroidManifest.xml:22:5-23:19
+	android:appComponentFactory
+		ADDED from [com.android.support:support-compat:28.0.0] C:\Users\cenec\.gradle\caches\transforms-2\files-2.1\002befe8d84159fb471564ce5d02f097\AndroidManifest.xml:22:18-91
+	android:label
+		ADDED from C:\Users\cenec\Documents\GitHub\A-Tale-of-Heroes-PM-\A-Tale-of-Heros-Project\android\AndroidManifest.xml:10:9-41
+	android:appCategory
+		ADDED from C:\Users\cenec\Documents\GitHub\A-Tale-of-Heroes-PM-\A-Tale-of-Heros-Project\android\AndroidManifest.xml:7:9-35
+	android:icon
+		ADDED from C:\Users\cenec\Documents\GitHub\A-Tale-of-Heroes-PM-\A-Tale-of-Heros-Project\android\AndroidManifest.xml:8:9-45
+	android:allowBackup
+		ADDED from C:\Users\cenec\Documents\GitHub\A-Tale-of-Heroes-PM-\A-Tale-of-Heros-Project\android\AndroidManifest.xml:6:9-35
+	android:theme
+		ADDED from C:\Users\cenec\Documents\GitHub\A-Tale-of-Heroes-PM-\A-Tale-of-Heros-Project\android\AndroidManifest.xml:11:9-40
+	android:isGame
+		ADDED from C:\Users\cenec\Documents\GitHub\A-Tale-of-Heroes-PM-\A-Tale-of-Heros-Project\android\AndroidManifest.xml:9:9-30
+activity#com.mygdx.game.AndroidLauncher
+ADDED from C:\Users\cenec\Documents\GitHub\A-Tale-of-Heroes-PM-\A-Tale-of-Heros-Project\android\AndroidManifest.xml:12:9-22:20
+	android:screenOrientation
+		ADDED from C:\Users\cenec\Documents\GitHub\A-Tale-of-Heroes-PM-\A-Tale-of-Heros-Project\android\AndroidManifest.xml:16:13-50
+	android:label
+		ADDED from C:\Users\cenec\Documents\GitHub\A-Tale-of-Heroes-PM-\A-Tale-of-Heros-Project\android\AndroidManifest.xml:15:13-45
+	android:configChanges
+		ADDED from C:\Users\cenec\Documents\GitHub\A-Tale-of-Heroes-PM-\A-Tale-of-Heros-Project\android\AndroidManifest.xml:14:13-107
+	android:name
+		ADDED from C:\Users\cenec\Documents\GitHub\A-Tale-of-Heroes-PM-\A-Tale-of-Heros-Project\android\AndroidManifest.xml:13:13-44
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from C:\Users\cenec\Documents\GitHub\A-Tale-of-Heroes-PM-\A-Tale-of-Heros-Project\android\AndroidManifest.xml:17:13-21:29
+action#android.intent.action.MAIN
+ADDED from C:\Users\cenec\Documents\GitHub\A-Tale-of-Heroes-PM-\A-Tale-of-Heros-Project\android\AndroidManifest.xml:18:17-69
+	android:name
+		ADDED from C:\Users\cenec\Documents\GitHub\A-Tale-of-Heroes-PM-\A-Tale-of-Heros-Project\android\AndroidManifest.xml:18:25-66
+category#android.intent.category.LAUNCHER
+ADDED from C:\Users\cenec\Documents\GitHub\A-Tale-of-Heroes-PM-\A-Tale-of-Heros-Project\android\AndroidManifest.xml:20:17-77
+	android:name
+		ADDED from C:\Users\cenec\Documents\GitHub\A-Tale-of-Heroes-PM-\A-Tale-of-Heros-Project\android\AndroidManifest.xml:20:27-74
+uses-sdk
+INJECTED from C:\Users\cenec\Documents\GitHub\A-Tale-of-Heroes-PM-\A-Tale-of-Heros-Project\android\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from C:\Users\cenec\Documents\GitHub\A-Tale-of-Heroes-PM-\A-Tale-of-Heros-Project\android\AndroidManifest.xml
+INJECTED from C:\Users\cenec\Documents\GitHub\A-Tale-of-Heroes-PM-\A-Tale-of-Heros-Project\android\AndroidManifest.xml
+MERGED from [com.android.support.constraint:constraint-layout:2.0.0-beta4] C:\Users\cenec\.gradle\caches\transforms-2\files-2.1\baf1e3e60b18e2658b0bce812188cebc\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support.constraint:constraint-layout:2.0.0-beta4] C:\Users\cenec\.gradle\caches\transforms-2\files-2.1\baf1e3e60b18e2658b0bce812188cebc\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support:appcompat-v7:28.0.0] C:\Users\cenec\.gradle\caches\transforms-2\files-2.1\664a0fd663eaf3af1a1eddd8a9e1f07b\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:28.0.0] C:\Users\cenec\.gradle\caches\transforms-2\files-2.1\664a0fd663eaf3af1a1eddd8a9e1f07b\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:28.0.0] C:\Users\cenec\.gradle\caches\transforms-2\files-2.1\542dd67c044aaab37f6f4b3b32a8ff13\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:28.0.0] C:\Users\cenec\.gradle\caches\transforms-2\files-2.1\542dd67c044aaab37f6f4b3b32a8ff13\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:28.0.0] C:\Users\cenec\.gradle\caches\transforms-2\files-2.1\f31ec72c4340fd51698887f23dea9ad3\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:28.0.0] C:\Users\cenec\.gradle\caches\transforms-2\files-2.1\f31ec72c4340fd51698887f23dea9ad3\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:28.0.0] C:\Users\cenec\.gradle\caches\transforms-2\files-2.1\46143dfa94cdc42401326782c9b5703f\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:28.0.0] C:\Users\cenec\.gradle\caches\transforms-2\files-2.1\46143dfa94cdc42401326782c9b5703f\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:28.0.0] C:\Users\cenec\.gradle\caches\transforms-2\files-2.1\3848bf9850eb9039413149c53ccd5adc\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:28.0.0] C:\Users\cenec\.gradle\caches\transforms-2\files-2.1\3848bf9850eb9039413149c53ccd5adc\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:28.0.0] C:\Users\cenec\.gradle\caches\transforms-2\files-2.1\7913f1c19817e625d834926aaf3e768d\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:28.0.0] C:\Users\cenec\.gradle\caches\transforms-2\files-2.1\7913f1c19817e625d834926aaf3e768d\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:loader:28.0.0] C:\Users\cenec\.gradle\caches\transforms-2\files-2.1\4a0a4f7ee10184e96a26b19a60f6182a\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:loader:28.0.0] C:\Users\cenec\.gradle\caches\transforms-2\files-2.1\4a0a4f7ee10184e96a26b19a60f6182a\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:viewpager:28.0.0] C:\Users\cenec\.gradle\caches\transforms-2\files-2.1\985864b96786ab3b9802e8bb5a1f9d35\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:viewpager:28.0.0] C:\Users\cenec\.gradle\caches\transforms-2\files-2.1\985864b96786ab3b9802e8bb5a1f9d35\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:coordinatorlayout:28.0.0] C:\Users\cenec\.gradle\caches\transforms-2\files-2.1\6301e4ccc6193945bf26d1b259f453fa\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:coordinatorlayout:28.0.0] C:\Users\cenec\.gradle\caches\transforms-2\files-2.1\6301e4ccc6193945bf26d1b259f453fa\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:drawerlayout:28.0.0] C:\Users\cenec\.gradle\caches\transforms-2\files-2.1\d165c6335fef3b75f8fa00c86b2181fb\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:drawerlayout:28.0.0] C:\Users\cenec\.gradle\caches\transforms-2\files-2.1\d165c6335fef3b75f8fa00c86b2181fb\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:slidingpanelayout:28.0.0] C:\Users\cenec\.gradle\caches\transforms-2\files-2.1\bb160d33eef1e84dc713ba8de3ff9d16\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:slidingpanelayout:28.0.0] C:\Users\cenec\.gradle\caches\transforms-2\files-2.1\bb160d33eef1e84dc713ba8de3ff9d16\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:customview:28.0.0] C:\Users\cenec\.gradle\caches\transforms-2\files-2.1\49ad02e98af2d1911fa5102fd7dcaf14\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:customview:28.0.0] C:\Users\cenec\.gradle\caches\transforms-2\files-2.1\49ad02e98af2d1911fa5102fd7dcaf14\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:swiperefreshlayout:28.0.0] C:\Users\cenec\.gradle\caches\transforms-2\files-2.1\0cf9f6104be13b2f140de058ef4a02c2\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:swiperefreshlayout:28.0.0] C:\Users\cenec\.gradle\caches\transforms-2\files-2.1\0cf9f6104be13b2f140de058ef4a02c2\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:asynclayoutinflater:28.0.0] C:\Users\cenec\.gradle\caches\transforms-2\files-2.1\f6bde033768e157a0e0d4b54b4612024\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:asynclayoutinflater:28.0.0] C:\Users\cenec\.gradle\caches\transforms-2\files-2.1\f6bde033768e157a0e0d4b54b4612024\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:28.0.0] C:\Users\cenec\.gradle\caches\transforms-2\files-2.1\002befe8d84159fb471564ce5d02f097\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:28.0.0] C:\Users\cenec\.gradle\caches\transforms-2\files-2.1\002befe8d84159fb471564ce5d02f097\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\cenec\.gradle\caches\transforms-2\files-2.1\bffdbea85b52bdbf29f88a7bdcaef733\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\cenec\.gradle\caches\transforms-2\files-2.1\bffdbea85b52bdbf29f88a7bdcaef733\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cursoradapter:28.0.0] C:\Users\cenec\.gradle\caches\transforms-2\files-2.1\7b609e3c1cc4182389a8d77bbdda67a5\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cursoradapter:28.0.0] C:\Users\cenec\.gradle\caches\transforms-2\files-2.1\7b609e3c1cc4182389a8d77bbdda67a5\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.1] C:\Users\cenec\.gradle\caches\transforms-2\files-2.1\253f325d6743eac9980897dbc9c4f72c\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.1] C:\Users\cenec\.gradle\caches\transforms-2\files-2.1\253f325d6743eac9980897dbc9c4f72c\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:documentfile:28.0.0] C:\Users\cenec\.gradle\caches\transforms-2\files-2.1\ac352deda70c7e40ae77e6df1bf14efb\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:documentfile:28.0.0] C:\Users\cenec\.gradle\caches\transforms-2\files-2.1\ac352deda70c7e40ae77e6df1bf14efb\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:localbroadcastmanager:28.0.0] C:\Users\cenec\.gradle\caches\transforms-2\files-2.1\693b40e10ecd02a7f2e58b34911cad9f\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:localbroadcastmanager:28.0.0] C:\Users\cenec\.gradle\caches\transforms-2\files-2.1\693b40e10ecd02a7f2e58b34911cad9f\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:print:28.0.0] C:\Users\cenec\.gradle\caches\transforms-2\files-2.1\f5081d72b2baa40267ff9d008efbc2fc\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:print:28.0.0] C:\Users\cenec\.gradle\caches\transforms-2\files-2.1\f5081d72b2baa40267ff9d008efbc2fc\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.1] C:\Users\cenec\.gradle\caches\transforms-2\files-2.1\be80fd4013bc4d887fc77730a84f7c62\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.1] C:\Users\cenec\.gradle\caches\transforms-2\files-2.1\be80fd4013bc4d887fc77730a84f7c62\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata:1.1.1] C:\Users\cenec\.gradle\caches\transforms-2\files-2.1\e5328583dc2d0e9808d39cfc6a2a92e7\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata:1.1.1] C:\Users\cenec\.gradle\caches\transforms-2\files-2.1\e5328583dc2d0e9808d39cfc6a2a92e7\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.1] C:\Users\cenec\.gradle\caches\transforms-2\files-2.1\1f7b87d4c430e94799a26679a96758b3\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.1] C:\Users\cenec\.gradle\caches\transforms-2\files-2.1\1f7b87d4c430e94799a26679a96758b3\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.1] C:\Users\cenec\.gradle\caches\transforms-2\files-2.1\4478674ddbb17b1fce69af8df6a2d688\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.1] C:\Users\cenec\.gradle\caches\transforms-2\files-2.1\4478674ddbb17b1fce69af8df6a2d688\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:interpolator:28.0.0] C:\Users\cenec\.gradle\caches\transforms-2\files-2.1\0368f8714bd88819caa74245803fa502\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:interpolator:28.0.0] C:\Users\cenec\.gradle\caches\transforms-2\files-2.1\0368f8714bd88819caa74245803fa502\AndroidManifest.xml:20:5-44
+INJECTED from C:\Users\cenec\Documents\GitHub\A-Tale-of-Heroes-PM-\A-Tale-of-Heros-Project\android\AndroidManifest.xml
+INJECTED from C:\Users\cenec\Documents\GitHub\A-Tale-of-Heroes-PM-\A-Tale-of-Heros-Project\android\AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from C:\Users\cenec\Documents\GitHub\A-Tale-of-Heroes-PM-\A-Tale-of-Heros-Project\android\AndroidManifest.xml
+		ADDED from C:\Users\cenec\Documents\GitHub\A-Tale-of-Heroes-PM-\A-Tale-of-Heros-Project\android\AndroidManifest.xml
+		INJECTED from C:\Users\cenec\Documents\GitHub\A-Tale-of-Heroes-PM-\A-Tale-of-Heros-Project\android\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from C:\Users\cenec\Documents\GitHub\A-Tale-of-Heroes-PM-\A-Tale-of-Heros-Project\android\AndroidManifest.xml
+		ADDED from C:\Users\cenec\Documents\GitHub\A-Tale-of-Heroes-PM-\A-Tale-of-Heros-Project\android\AndroidManifest.xml
+		INJECTED from C:\Users\cenec\Documents\GitHub\A-Tale-of-Heroes-PM-\A-Tale-of-Heros-Project\android\AndroidManifest.xml
