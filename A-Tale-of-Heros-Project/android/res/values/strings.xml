@@ -2,5 +2,9 @@
 <resources>
 
     <string name="app_name">A-Tale-of-Heroes</string>
+    <string name="gameTitle">A Tale of Heroes</string>
+    <string name="newGameButtonTxt">New game</string>
+    <string name="loadGameButtonTxt">Load game</string>
+    <string name="exitGameButtonTxt">Exit game</string>
 
 </resources>
