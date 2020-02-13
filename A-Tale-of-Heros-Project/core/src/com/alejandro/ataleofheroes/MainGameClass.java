@@ -38,13 +38,15 @@ public class MainGameClass extends ApplicationAdapter {
 	    mRenderer = new OrthogonalTiledMapRenderer(map, unitScale);
 
 	    oCamera = new OrthographicCamera();
-	    oCamera.zoom = 0.3f;
+	    oCamera.zoom = 1f;
         WIDTH = ((TiledMapTileLayer)map.getLayers().get(0)).getWidth();
         HEIGHT = ((TiledMapTileLayer)map.getLayers().get(0)).getHeight();
 
         oCamera.setToOrtho(false, WIDTH, HEIGHT);
-        oCamera.position.x = 0;
-        oCamera.position.y = 0;
+
+        oCamera.position.x = WIDTH/2;
+        oCamera.position.y = HEIGHT/2;
+
         oCamera.update();
 
 
@@ -54,11 +56,13 @@ public class MainGameClass extends ApplicationAdapter {
 	public void render () {
 		Gdx.gl.glClearColor(1, 0, 0, 1);
 		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
+
+		mRenderer.setView(oCamera);
 		//batch.begin();
 		//batch.draw(img, 0, 0);
 		//batch.end();
 
-        oCamera.update();
+        //oCamera.update();
         mRenderer.render();
 
         mRenderer.setView(oCamera);
@@ -68,5 +72,7 @@ public class MainGameClass extends ApplicationAdapter {
 	public void dispose () {
 		batch.dispose();
 		img.dispose();
+
+		mRenderer.dispose();
 	}
 }
