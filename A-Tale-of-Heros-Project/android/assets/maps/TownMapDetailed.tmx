@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.2" tiledversion="1.3.1" orientation="orthogonal" renderorder="left-down" compressionlevel="0" width="35" height="35" tilewidth="32" tileheight="32" infinite="0" nextlayerid="7" nextobjectid="30">
  <tileset firstgid="1" name="UnitedTiles" tilewidth="32" tileheight="32" tilecount="360" columns="8">
-  <image source="../Assets/Maps_Atlas/atlasPNG/magecity.png" width="256" height="1450"/>
+  <image source="../pngFiles/magecity.png" width="256" height="1450"/>
  </tileset>
  <tileset firstgid="361" name="UnitedTiles2" tilewidth="32" tileheight="32" tilecount="900" columns="30">
-  <image source="../Assets/Maps_Atlas/atlasPNG/hyptosis_tile-art-batch-1.png" width="960" height="960"/>
+  <image source="../pngFiles/hyptosis_tile-art-batch-1.png" width="960" height="960"/>
  </tileset>
  <tileset firstgid="1261" name="UnitedTiles3" tilewidth="32" tileheight="32" tilecount="900" columns="30">
-  <image source="../Assets/Maps_Atlas/atlasPNG/hyptosis_tile-art-batch-3.png" width="960" height="960"/>
+  <image source="../pngFiles/hyptosis_tile-art-batch-3.png" width="960" height="960"/>
  </tileset>
  <layer id="1" name="Terrain" width="35" height="35">
   <data encoding="csv">
