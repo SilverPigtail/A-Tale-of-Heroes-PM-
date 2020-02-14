@@ -6,5 +6,7 @@
     <string name="newGameButtonTxt">New game</string>
     <string name="loadGameButtonTxt">Load game</string>
     <string name="exitGameButtonTxt">Exit game</string>
-
+    <string name="labelName">Name:</string>
+    <string name="labelPassoword">Password:</string>
+    <string name="loginButtonText">Login</string>
 </resources>
