@@ -12,6 +12,8 @@ import com.badlogic.gdx.maps.tiled.TiledMapTileLayer;
 import com.badlogic.gdx.maps.tiled.TmxMapLoader;
 import com.badlogic.gdx.maps.tiled.renderers.OrthogonalTiledMapRenderer;
 
+import gameobjects.Character;
+
 public class MainGameClass extends ApplicationAdapter {
 	SpriteBatch batch;
 	Texture img;
@@ -21,6 +23,8 @@ public class MainGameClass extends ApplicationAdapter {
 
 	private static int WIDTH;
 	private static int HEIGHT;
+
+	Character gameCharacter;
 
 	public static final float unitScale = 1/16f;
 
@@ -47,6 +51,8 @@ public class MainGameClass extends ApplicationAdapter {
         oCamera.position.x = WIDTH/2;
         oCamera.position.y = HEIGHT/2;
 
+        gameCharacter = new Character(oCamera, map, 10f, 10f);
+
         oCamera.update();
 
 
@@ -63,9 +69,11 @@ public class MainGameClass extends ApplicationAdapter {
 		//batch.end();
 
         //oCamera.update();
-        mRenderer.render();
+
 
         mRenderer.setView(oCamera);
+		mRenderer.render();
+		gameCharacter.draw();
 	}
 	
 	@Override
