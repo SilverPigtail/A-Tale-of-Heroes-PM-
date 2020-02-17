@@ -10,6 +10,10 @@ public class AndroidInput implements GestureDetector.GestureListener {
 
     Character gameCharacter;
 
+    public AndroidInput(Character c){
+
+        gameCharacter = c;
+    }
     @Override
     public boolean touchDown(float x, float y, int pointer, int button) {
 
