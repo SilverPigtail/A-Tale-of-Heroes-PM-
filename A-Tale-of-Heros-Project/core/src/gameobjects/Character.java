@@ -34,14 +34,20 @@ public class Character {
         this.cCamera = cCamera; // Cuidado con esto
         this.map = map;
 
+        cSprite.setBounds(0, 0, Gdx.graphics.getWidth()/6, Gdx.graphics.getHeight()/6);
         tMWidth = ((TiledMapTileLayer)map.getLayers().get(0)).getWidth();
         tMHeight = ((TiledMapTileLayer)map.getLayers().get(0)).getHeight();
-        pMWidth = tMWidth * (int)map.getProperties().get("width");
-        pMHeight = tMHeight * (int)map.getProperties().get("height");
+        pMWidth = 15 * (int)map.getProperties().get("width");
+        pMHeight = 15 * (int)map.getProperties().get("height");
+
+
 
         Vector3 pixelPositionV = cCamera.project(new Vector3((cCamera.position.x), cCamera.position.y, 0));
 
         cSprite.setPosition(pixelPositionV.x, pixelPositionV.y);
+
+
+
 
 
     }
@@ -51,8 +57,6 @@ public class Character {
         cSprite.setSize((Gdx.graphics.getWidth() * cSprite.getTexture().getWidth() / pMWidth) * (1 / cCamera.zoom),
                 (Gdx.graphics.getHeight() * cSprite.getTexture().getHeight() / pMHeight)
                        *(1/ cCamera.zoom));
-
-
     }
 
 
@@ -62,35 +66,32 @@ public class Character {
 
             case 'u':
 
-                if(tilesPosition.y < this.tMHeight - 1) {
-                    tilesPosition.y++;
-                }
 
-                cCamera.position.y = tilesPosition.y;
+                    tilesPosition.y++;
+
+
 
                 break;
 
             case 'd':
 
-                if(tilesPosition.y > 0) {
-                    tilesPosition.y--;
-                }
+                tilesPosition.y--;
 
                 break;
 
             case 'r':
 
-                if(tilesPosition.x < this.tMWidth - 1) {
+
                     tilesPosition.x++;
-                }
+
 
                 break;
 
             case 'l':
 
-                if(tilesPosition.x > 0) {
+
                     tilesPosition.x--;
-                }
+
                 break;
         }
 

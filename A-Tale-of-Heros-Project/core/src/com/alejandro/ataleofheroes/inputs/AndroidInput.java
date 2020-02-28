@@ -6,7 +6,7 @@ import com.badlogic.gdx.math.Vector2;
 
 import gameobjects.Character;
 
-public class AndroidInput implements GestureDetector.GestureListener {
+/*public class AndroidInput implements GestureDetector.GestureListener {
 
     Character gameCharacter;
 
@@ -77,4 +77,4 @@ public class AndroidInput implements GestureDetector.GestureListener {
     public void pinchStop() {
 
     }
-}
+}*/
