@@ -1,5 +1,6 @@
 package gameobjects;
 
+import com.alejandro.ataleofheroes.actors.GameHitboxes;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
@@ -8,9 +9,16 @@ import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.badlogic.gdx.maps.tiled.TiledMapTileLayer;
+import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector3;
+import com.badlogic.gdx.scenes.scene2d.Actor;
 
-public class CharacterEscalated {
+public class CharacterEscalated extends Actor {
+
+    private boolean isHB;
+    private Rectangle cRectangle;
+    private Rectangle[] cRectangles;
+    private GameHitboxes gmHitboxes;
 
     private Sprite cSprite;
     private OrthographicCamera camera;
@@ -23,10 +31,30 @@ public class CharacterEscalated {
     private int tileWidth;
     private int tileHeight;
 
+    private Texture texture;
 
-    public CharacterEscalated(OrthographicCamera camera, TiledMap map) {
+    private int x, y;
+    float widthpj, heightpj;
 
-        this.cSprite = new Sprite(new Texture("pjsprites/upS.png"));
+
+
+    public CharacterEscalated(OrthographicCamera camera, TiledMap map, int posX, int posY, float pjWidth, float pjHeight) {
+
+        isHB = new Boolean(false);
+        this.gmHitboxes = new GameHitboxes();
+        gmHitboxes.checkCollision(map, this);
+        cRectangles = gmHitboxes.getRect();
+
+        this.x = posX;
+        this.y = posY;
+        this.widthpj = pjWidth;
+        this.heightpj = pjHeight;
+
+        texture = new Texture(Gdx.files.internal("pjsprites/upS.png"));
+        this.cSprite = new Sprite(texture);
+
+        cRectangle = new Rectangle(posX, posY, texture.getWidth(), texture.getHeight());
+
         this.camera = camera;
         tilesPosition = this.camera.position;
         cBatch = new SpriteBatch();
@@ -46,7 +74,7 @@ public class CharacterEscalated {
     }
 
     public void draw() {
-        setCamera();
+        // setCamera();
 
         cBatch.begin();
         cSprite.draw(cBatch);
@@ -68,24 +96,41 @@ public class CharacterEscalated {
 
             case 'u':
 
-                if(tilesPosition.y < this.tileHeight - 1) {
+               if(tilesPosition.y < this.tileHeight - 1) {
 
-                    tilesPosition.y++;
-                    //cSprite.set(new Sprite(new Texture("pjsprites/upS.png")));
 
+                    cSprite.setPosition(cSprite.getX(), cSprite.getY() + 10);
                 }
 
-                camera.position.y = tilesPosition.y;
+                /*for(int b=0;b<cRectangles.length;b++){
+                    if(cRectangles[b].overlaps(cRectangle.set(x,y+7,cSprite.getWidth(),cSprite.getHeight()))){
+                        isHB=true;
+
+                        System.out.println(isHB);
+
+                        break;
+                    }else{
+                        isHB=false;
+                        System.out.println(isHB);
+                    }
+                }
+                if(isHB==false){
+
+                    cSprite.setPosition(cSprite.getX(), cSprite.getY() + 10);
+
+                }*/
+
+
 
                 break;
 
             case 'd':
 
                 if(tilesPosition.y > 0) {
-                    tilesPosition.y--;
+                    cSprite.setPosition(cSprite.getX(), cSprite.getY() - 10);
                 }
 
-                camera.position.y = tilesPosition.y;
+
 
                 break;
 
@@ -93,10 +138,11 @@ public class CharacterEscalated {
 
                 if(tilesPosition.x > 0) {
 
-                    tilesPosition.x--;
+
+                    cSprite.setPosition(cSprite.getX() - 10, cSprite.getY());
                 }
 
-                camera.position.x = tilesPosition.x;
+
 
 
                 break;
@@ -104,10 +150,10 @@ public class CharacterEscalated {
             case 'r':
 
                 if(tilesPosition.x < this.tileWidth - 1) {
-                    tilesPosition.x++;
+                    cSprite.setPosition(cSprite.getX() + 10, cSprite.getY());
                 }
 
-                camera.position.x = tilesPosition.x;
+
                 break;
 
 

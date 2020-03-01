@@ -1,6 +1,7 @@
 package runmainclass;
 
 // import com.alejandro.ataleofheroes.inputs.AndroidInput;
+import com.alejandro.ataleofheroes.actors.GameHitboxes;
 import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
@@ -13,6 +14,7 @@ import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.input.GestureDetector;
 import com.badlogic.gdx.maps.MapObject;
 import com.badlogic.gdx.maps.MapObjects;
+import com.badlogic.gdx.maps.MapProperties;
 import com.badlogic.gdx.maps.objects.PolygonMapObject;
 import com.badlogic.gdx.maps.objects.RectangleMapObject;
 import com.badlogic.gdx.maps.tiled.TiledMap;
@@ -51,7 +53,7 @@ public class MainGameClass extends Game {
 	private static int WIDTH;
 	private static int HEIGHT;
 
-	Character gameCharacter;
+	//Character gameCharacter;
 	CharacterEscalated escalatedGameCharacter;
 
 	private ImageButton buttonRight;
@@ -60,17 +62,27 @@ public class MainGameClass extends Game {
 	private ImageButton buttonDown;
 
 	private TextureAtlas buttonAtlas;
+	private GameHitboxes gmHitboxes;
 
-	private World world;
+	//private World world;
 	private Stage stg;
+
+	private MapObjects mapObjects;
+
+	private MapProperties properties;
+
 
 	public static final float unitScale = 1/16f;
 
 
-
+	protected int tileWidth, tileHeight,
+			mapWidthInTiles, mapHeightInTiles,
+			mapWidthInPixels, mapHeightInPixels;
 
 	@Override
 	public void create () {
+
+		// Inicializamos el stage y le damos un inputProcessor:
 
 		stg = new Stage(new ScreenViewport());
 		Gdx.input.setInputProcessor(stg);
@@ -78,10 +90,27 @@ public class MainGameClass extends Game {
 	    float w = Gdx.graphics.getWidth();
 	    float h = Gdx.graphics.getHeight();
 
-	    TiledMap map = new TmxMapLoader().load("maps/TownMapDetailed.tmx");
-	    //TiledMap map = new TmxMapLoader().load("maps/HouseMap.tmx");
 
-		//MapObjects objetosMapa = map.getLayers().get("objetos").getObjects();
+		TiledMap map = new TmxMapLoader().load("maps/TownMapDetailed.tmx");
+
+		properties = map.getProperties();
+		tileWidth = properties.get("tilewidth", Integer.class);
+		tileHeight = properties.get("tileheight", Integer.class);
+		mapWidthInTiles = properties.get("width", Integer.class);
+		mapHeightInTiles = properties.get("height", Integer.class);
+		mapWidthInPixels = mapWidthInTiles * tileWidth;
+		mapHeightInPixels = mapHeightInTiles * tileHeight;
+
+		tileWidth = properties.get("tilewidth", Integer.class);
+		tileHeight = properties.get("tileheight", Integer.class);
+		mapWidthInTiles = properties.get("width", Integer.class);
+		mapHeightInTiles = properties.get("height", Integer.class);
+		mapWidthInPixels = mapWidthInTiles * tileWidth;
+		mapHeightInPixels = mapHeightInTiles * tileHeight;
+
+
+
+
 
 	    buttonAtlas = new TextureAtlas("buttons/buttons.pack");
 		Skin buttonSkin = new Skin();
@@ -94,16 +123,16 @@ public class MainGameClass extends Game {
         WIDTH = ((TiledMapTileLayer)map.getLayers().get(0)).getWidth();
         HEIGHT = ((TiledMapTileLayer)map.getLayers().get(0)).getHeight();
 
-        //oCamera.setToOrtho(false, WIDTH, HEIGHT);
         oCamera.setToOrtho(false, WIDTH, HEIGHT);
 
         oCamera.position.x = WIDTH/2;
         oCamera.position.y = HEIGHT/2;
 
         oCamera.zoom = 0.9f;
-        //gameCharacter = new Character(oCamera, map, 10f, 10f);
 
-		escalatedGameCharacter = new CharacterEscalated(oCamera, map);
+		System.out.println(mapHeightInPixels);
+		System.out.println(mapWidthInPixels);
+		escalatedGameCharacter = new CharacterEscalated(oCamera, map, 70, 70, mapWidthInPixels /10, mapHeightInPixels /10);
 
 
 
@@ -114,7 +143,7 @@ public class MainGameClass extends Game {
 			@Override
 			public void touchUp(InputEvent event, float x, float y, int pointer, int button) {
 
-				Gdx.app.log("movimiento", "Botón clickado");
+				escalatedGameCharacter.move('r');
 
 
 
@@ -123,7 +152,7 @@ public class MainGameClass extends Game {
 			@Override
 			public boolean touchDown(InputEvent event, float x, float y, int pointer, int button) {
 
-				Gdx.app.log("movimiento", "Botón clickado");
+
 
 				escalatedGameCharacter.move('r');
 				escalatedGameCharacter.changeSprite('r');
@@ -140,7 +169,7 @@ public class MainGameClass extends Game {
 			@Override
 			public void touchUp(InputEvent event, float x, float y, int pointer, int button) {
 
-				Gdx.app.log("movimiento", "Botón clickado");
+				escalatedGameCharacter.move('l');
 
 
 
@@ -149,9 +178,12 @@ public class MainGameClass extends Game {
 			@Override
 			public boolean touchDown(InputEvent event, float x, float y, int pointer, int button) {
 
-				Gdx.app.log("movimiento", "Botón clickado");
 
-				escalatedGameCharacter.move('l');
+
+
+					escalatedGameCharacter.move('l');
+
+
 
 				return true;
 			}
@@ -165,7 +197,7 @@ public class MainGameClass extends Game {
 			@Override
 			public void touchUp(InputEvent event, float x, float y, int pointer, int button) {
 
-				Gdx.app.log("movimiento", "Botón clickado");
+				escalatedGameCharacter.move('u');
 
 
 
@@ -174,7 +206,7 @@ public class MainGameClass extends Game {
 			@Override
 			public boolean touchDown(InputEvent event, float x, float y, int pointer, int button) {
 
-				Gdx.app.log("movimiento", "Botón clickado");
+
 
 				escalatedGameCharacter.move('u');
 
@@ -190,7 +222,7 @@ public class MainGameClass extends Game {
 			@Override
 			public void touchUp(InputEvent event, float x, float y, int pointer, int button) {
 
-				Gdx.app.log("movimiento", "Botón clickado");
+				escalatedGameCharacter.move('d');
 
 
 
@@ -199,7 +231,7 @@ public class MainGameClass extends Game {
 			@Override
 			public boolean touchDown(InputEvent event, float x, float y, int pointer, int button) {
 
-				Gdx.app.log("movimiento", "Botón clickado");
+
 
 				escalatedGameCharacter.move('d');
 
@@ -212,7 +244,7 @@ public class MainGameClass extends Game {
 
 		Table tablePad = new Table();
 		tablePad.bottom();
-		tablePad.debug();
+		// tablePad.debug();
 		tablePad.setFillParent(true);
 
 		tablePad.add(buttonUp).height(Gdx.graphics.getHeight() / 6).width(Gdx.graphics.getWidth() / 7);
@@ -223,28 +255,21 @@ public class MainGameClass extends Game {
 		stg.addActor(tablePad);
 
 
-
-		/*for(MapObject objeto : objetosMapa) {
-			if (objeto instanceof RectangleMapObject) {
-				Rectangle rect = ((RectangleMapObject) objeto).getRectangle();
-			} else if (objeto instanceof PolygonMapObject) {
-				Polygon elementoEscenario = ((PolygonMapObject) objeto).getPolygon();
-				Polygon hitboxPersonaje = new Polygon(new float[] { 0, 0, ash1.getHitbox().width, 0, ash1.getHitbox().width,
-						ash1.getHitbox().height, 0, ash1.getHitbox().height });
-				hitboxPersonaje.setPosition(ash1.getHitbox().x, ash1.getHitbox().y);
-				if (Intersector.overlapConvexPolygons(hitboxPersonaje, elementoEscenario)){
-					Gdx.app.log("Colision!!!",objeto.getName());
-				}
-			} else if (objeto instanceof PolylineMapObject) {
-				Polyline chain = ((PolylineMapObject) objeto).getPolyline();
-				// do something with chain...
-			} else if (objeto instanceof CircleMapObject) {
-				Circle circle = ((CircleMapObject) objeto).getCircle();
-				// do something with circle...
-			}
-		}*/
+		mapObjects = map.getLayers().get("hitboxes").getObjects();
 
 
+
+		gmHitboxes = new GameHitboxes();
+		gmHitboxes.checkCollision(map, escalatedGameCharacter);
+
+
+		for(int i = 0; i < gmHitboxes.getActores().length - 1; i++) {
+
+			stg.addActor(gmHitboxes.getActores()[i]);
+
+		}
+
+		stg.setDebugAll(true);
 		oCamera.update();
 
 
