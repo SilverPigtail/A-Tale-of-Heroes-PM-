@@ -42,6 +42,7 @@ public class CharacterEscalated {
 
         cSprite.setPosition(pixelPos.x, pixelPos.y);
 
+
     }
 
     public void draw() {
@@ -55,10 +56,10 @@ public class CharacterEscalated {
     private void setCamera() {
 
         cSprite.setSize(((Gdx.graphics.getWidth()*cSprite.getTexture().getWidth())
-                        /pixelWidth)*(4f/camera.zoom),
+                        /pixelWidth)*(1.9f/camera.zoom),
                 ((Gdx.graphics.getHeight()*cSprite.getTexture().getHeight())
                         /pixelHeight)
-                        *(4f/camera.zoom));
+                        *(1.9f/camera.zoom));
     }
 
     public void move(char direction) {

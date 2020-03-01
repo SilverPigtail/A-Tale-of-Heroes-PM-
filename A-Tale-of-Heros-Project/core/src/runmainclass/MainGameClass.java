@@ -11,11 +11,24 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.input.GestureDetector;
+import com.badlogic.gdx.maps.MapObject;
+import com.badlogic.gdx.maps.MapObjects;
+import com.badlogic.gdx.maps.objects.PolygonMapObject;
+import com.badlogic.gdx.maps.objects.RectangleMapObject;
 import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.badlogic.gdx.maps.tiled.TiledMapImageLayer;
 import com.badlogic.gdx.maps.tiled.TiledMapTileLayer;
 import com.badlogic.gdx.maps.tiled.TmxMapLoader;
 import com.badlogic.gdx.maps.tiled.renderers.OrthogonalTiledMapRenderer;
+import com.badlogic.gdx.math.Polygon;
+import com.badlogic.gdx.math.Rectangle;
+import com.badlogic.gdx.math.Vector2;
+import com.badlogic.gdx.physics.box2d.Body;
+import com.badlogic.gdx.physics.box2d.BodyDef;
+import com.badlogic.gdx.physics.box2d.FixtureDef;
+import com.badlogic.gdx.physics.box2d.PolygonShape;
+import com.badlogic.gdx.physics.box2d.Shape;
+import com.badlogic.gdx.physics.box2d.World;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.InputListener;
 import com.badlogic.gdx.scenes.scene2d.Stage;
@@ -48,6 +61,7 @@ public class MainGameClass extends Game {
 
 	private TextureAtlas buttonAtlas;
 
+	private World world;
 	private Stage stg;
 
 	public static final float unitScale = 1/16f;
@@ -65,18 +79,22 @@ public class MainGameClass extends Game {
 	    float h = Gdx.graphics.getHeight();
 
 	    TiledMap map = new TmxMapLoader().load("maps/TownMapDetailed.tmx");
+	    //TiledMap map = new TmxMapLoader().load("maps/HouseMap.tmx");
+
+		//MapObjects objetosMapa = map.getLayers().get("objetos").getObjects();
 
 	    buttonAtlas = new TextureAtlas("buttons/buttons.pack");
 		Skin buttonSkin = new Skin();
 	    buttonSkin.addRegions(buttonAtlas);
 
-	    mRenderer = new OrthogonalTiledMapRenderer(map, unitScale);
+	    mRenderer = new OrthogonalTiledMapRenderer(map, unitScale / 2);
 
 	    oCamera = new OrthographicCamera();
 	    //oCamera.zoom = 1f;
         WIDTH = ((TiledMapTileLayer)map.getLayers().get(0)).getWidth();
         HEIGHT = ((TiledMapTileLayer)map.getLayers().get(0)).getHeight();
 
+        //oCamera.setToOrtho(false, WIDTH, HEIGHT);
         oCamera.setToOrtho(false, WIDTH, HEIGHT);
 
         oCamera.position.x = WIDTH/2;
@@ -206,10 +224,28 @@ public class MainGameClass extends Game {
 
 
 
+		/*for(MapObject objeto : objetosMapa) {
+			if (objeto instanceof RectangleMapObject) {
+				Rectangle rect = ((RectangleMapObject) objeto).getRectangle();
+			} else if (objeto instanceof PolygonMapObject) {
+				Polygon elementoEscenario = ((PolygonMapObject) objeto).getPolygon();
+				Polygon hitboxPersonaje = new Polygon(new float[] { 0, 0, ash1.getHitbox().width, 0, ash1.getHitbox().width,
+						ash1.getHitbox().height, 0, ash1.getHitbox().height });
+				hitboxPersonaje.setPosition(ash1.getHitbox().x, ash1.getHitbox().y);
+				if (Intersector.overlapConvexPolygons(hitboxPersonaje, elementoEscenario)){
+					Gdx.app.log("Colision!!!",objeto.getName());
+				}
+			} else if (objeto instanceof PolylineMapObject) {
+				Polyline chain = ((PolylineMapObject) objeto).getPolyline();
+				// do something with chain...
+			} else if (objeto instanceof CircleMapObject) {
+				Circle circle = ((CircleMapObject) objeto).getCircle();
+				// do something with circle...
+			}
+		}*/
 
 
-        oCamera.update();
-
+		oCamera.update();
 
 
 
@@ -236,4 +272,16 @@ public class MainGameClass extends Game {
 		escalatedGameCharacter.dispose();
 		mRenderer.dispose();
 	}
+
+	/*private static PolygonShape getRectangle(RectangleMapObject rectangleObject) {
+		Rectangle rectangle = rectangleObject.getRectangle();
+		PolygonShape polygon = new PolygonShape();
+		Vector2 size = new Vector2((rectangle.x + rectangle.width * 0.5f) /unitScale,
+				(rectangle.y + rectangle.height * 0.5f ) / unitScale);
+		polygon.setAsBox(rectangle.width * 0.5f /unitScale,
+				rectangle.height * 0.5f / unitScale,
+				size,
+				0.0f);
+		return polygon;
+	}*/
 }
