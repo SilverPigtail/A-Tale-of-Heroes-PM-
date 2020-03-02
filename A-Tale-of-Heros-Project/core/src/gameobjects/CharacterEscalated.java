@@ -67,7 +67,7 @@ public class CharacterEscalated extends Actor {
 
 
         //Uso un setSize porque funciona de momento. En teoría, no debería afectar a la hitbox.
-        
+
         cSprite.setSize(65, 65);
 
         Vector3 pixelPos = camera.project(new Vector3(camera.position.x, camera.position.y, 0));

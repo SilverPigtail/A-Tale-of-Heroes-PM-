@@ -6,6 +6,8 @@ import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.InputMultiplexer;
+import com.badlogic.gdx.audio.Music;
+import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
@@ -70,6 +72,9 @@ public class MainGameClass extends Game {
 	private MapObjects mapObjects;
 
 	private MapProperties properties;
+
+
+	private Music theme;
 
 
 	public static final float unitScale = 1/16f;
@@ -269,11 +274,18 @@ public class MainGameClass extends Game {
 
 		}
 
+
+
+
 		stg.setDebugAll(true);
 		oCamera.update();
 
 
 
+			theme = Gdx.audio.newMusic(Gdx.files.internal("music/track.mp3"));
+			theme.setLooping(true);
+			theme.setVolume(56.5f);
+			theme.play();
 	}
 
 	@Override
@@ -294,6 +306,7 @@ public class MainGameClass extends Game {
 	@Override
 	public void dispose () {
 
+		theme.dispose();
 		escalatedGameCharacter.dispose();
 		mRenderer.dispose();
 	}
