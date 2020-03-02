@@ -9,6 +9,9 @@ import android.widget.Toast;
 
 import com.badlogic.gdx.Game;
 
+/***
+ * Unused code, if the database will not have user and passoword, this class will be deleted.
+ */
 public class LoginActivity extends AppCompatActivity {
 
     @Override
@@ -19,6 +22,10 @@ public class LoginActivity extends AppCompatActivity {
 
     }
 
+    /***
+     * This is a simple class that allows the user to login on the database.
+     * @param view
+     */
     public void loginFun(View view) {
 
         EditText nameField = (EditText)findViewById(R.id.nameField);

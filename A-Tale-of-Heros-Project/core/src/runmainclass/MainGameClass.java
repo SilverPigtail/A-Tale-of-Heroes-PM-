@@ -45,6 +45,9 @@ import com.badlogic.gdx.utils.viewport.ScreenViewport;
 import gameobjects.Character;
 import gameobjects.CharacterEscalated;
 
+/***
+ * This class creates the map, implements the mechanics and set the sprite and buttons in the map.
+ */
 public class MainGameClass extends Game {
 	SpriteBatch batch;
 	Texture img;
@@ -268,9 +271,9 @@ public class MainGameClass extends Game {
 		gmHitboxes.checkCollision(map, escalatedGameCharacter);
 
 
-		for(int i = 0; i < gmHitboxes.getActores().length - 1; i++) {
+		for(int i = 0; i < gmHitboxes.getActors().length - 1; i++) {
 
-			stg.addActor(gmHitboxes.getActores()[i]);
+			stg.addActor(gmHitboxes.getActors()[i]);
 
 		}
 

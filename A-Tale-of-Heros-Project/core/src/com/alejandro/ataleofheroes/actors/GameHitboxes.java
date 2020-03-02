@@ -8,19 +8,22 @@ import com.badlogic.gdx.scenes.scene2d.Actor;
 
 import gameobjects.CharacterEscalated;
 
+/***
+ * This class creates the hitboxes of the map and try to interact with the game character.
+ */
 public class GameHitboxes {
 
-    private Actor[]actores;
+    private Actor[]actors;
     private Rectangle[]rect;
-    private Rectangle jugador;
+    private Rectangle gCharacter;
 
 
     public void checkCollision(TiledMap map, CharacterEscalated personaje) {
-        jugador=new Rectangle();
-        jugador.set(personaje.getX(),personaje.getY(),personaje.getWidth(),personaje.getHeight());
+        gCharacter=new Rectangle();
+        gCharacter.set(personaje.getX(),personaje.getY(),personaje.getWidth(),personaje.getHeight());
         MapObjects mons = map.getLayers().get("hitboxes").getObjects();
         // MapObjects mons2 = map.getLayers().get("Entrada").getObjects();
-        actores=new Actor[mons.getCount()];
+        actors=new Actor[mons.getCount()];
         rect=new Rectangle[mons.getCount()];
         for (int i = 0;i < mons.getCount(); i++) {
             RectangleMapObject obj1 = (RectangleMapObject) mons.get(i);
@@ -34,15 +37,15 @@ public class GameHitboxes {
             */
 
 
-            actores[i]=new Actor();
-            actores[i].setBounds(rect1.x * 2,rect1.y * 2,rect1.width * 2,rect1.height * 2);
+            actors[i]=new Actor();
+            actors[i].setBounds(rect1.x * 2,rect1.y * 2,rect1.width * 2,rect1.height * 2);
             //actores[i].setColor(Color.BLUE);
 
         }
     }
 
-    public Actor[] getActores() {
-        return actores;
+    public Actor[] getActors() {
+        return actors;
     }
 
     public Rectangle[] getRect() {

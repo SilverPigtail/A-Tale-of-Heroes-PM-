@@ -9,6 +9,9 @@ import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 import com.badlogic.gdx.utils.viewport.ScreenViewport;
 
+/***
+ * Unused class, this will be deleted.
+ */
 public class MenuScreen  implements Screen {
 
     private Box2D parent;

@@ -13,6 +13,9 @@ import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector3;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 
+/***
+ * Class that creates the main character with the sprite, sizes and locations that it has.
+ */
 public class CharacterEscalated extends Actor {
 
     private boolean isHB;

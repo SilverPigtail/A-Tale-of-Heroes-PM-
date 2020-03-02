@@ -7,6 +7,9 @@ import android.os.IBinder;
 import android.support.annotation.Nullable;
 import android.widget.Toast;
 
+/***
+ * This class creates the toast service that appears when you hit the start game button.
+ */
 public class AlertService extends Service {
 
 

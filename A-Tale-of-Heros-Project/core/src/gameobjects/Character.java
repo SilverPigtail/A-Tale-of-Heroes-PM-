@@ -9,6 +9,9 @@ import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.badlogic.gdx.maps.tiled.TiledMapTileLayer;
 import com.badlogic.gdx.math.Vector3;
 
+/***
+ * Unused class, this class will be deleted.
+ */
 public class Character {
 
     private Sprite cSprite;

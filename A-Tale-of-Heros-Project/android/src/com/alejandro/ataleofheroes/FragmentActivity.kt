@@ -8,6 +8,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 
+/***
+ * This is the fragment that is located in the game menu class.
+ */
 class FragmentActivity : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {

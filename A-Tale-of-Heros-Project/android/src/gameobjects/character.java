@@ -8,6 +8,9 @@ import com.badlogic.gdx.math.Vector3;
 
 import java.util.Vector;
 
+/***
+ * Unused class, this class will be deleted.
+ */
 public class character {
 
     private Sprite cSprite;
