@@ -27,6 +27,13 @@
             android:screenOrientation="landscape">
 
         </activity>
+        <service
+            android:name="services.AlertService"
+            android:icon="@drawable/gameicon"
+            android:label="@string/serviceLabelText"
+        >
+
+        </service>
 
     </application>
 

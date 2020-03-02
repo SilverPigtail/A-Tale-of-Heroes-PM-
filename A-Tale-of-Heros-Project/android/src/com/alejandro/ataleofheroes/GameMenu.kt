@@ -5,6 +5,7 @@ import android.support.constraint.ConstraintLayout
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import services.AlertService
 
 class GameMenu : AppCompatActivity() {
 
@@ -18,7 +19,11 @@ class GameMenu : AppCompatActivity() {
 
     fun launchGame(view: View) {
 
+        var intentS: Intent = Intent(this, AlertService::class.java)
+        //intentS.putExtra("svcMessage", "Starting game...")
+        startService(intentS)
         val i = Intent(this, AndroidLauncher::class.java)
         this.startActivity(i)
+
     }
 }

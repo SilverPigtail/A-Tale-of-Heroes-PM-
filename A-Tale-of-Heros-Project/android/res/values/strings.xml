@@ -9,4 +9,5 @@
     <string name="labelName">Name:</string>
     <string name="labelPassoword">Password:</string>
     <string name="loginButtonText">Login</string>
+    <string name="serviceLabelText">Service</string>
 </resources>
