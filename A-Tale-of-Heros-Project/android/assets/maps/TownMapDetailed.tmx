@@ -206,10 +206,5 @@
  </layer>
  <objectgroup color="#ff0000" id="7" name="hitboxes">
   <object id="32" x="707" y="799" width="287" height="227"/>
-  <object id="33" x="832" y="1.5" width="227" height="253"/>
-  <object id="34" x="101.905" y="33.967" width="381" height="224"/>
-  <object id="35" x="419.225" y="442.843" width="249.96" height="64.9504"/>
-  <object id="36" x="417.257" y="602.267" width="27.5547" height="62.9822"/>
-  <object id="37" x="639.663" y="608.172" width="29.5229" height="57.0776"/>
  </objectgroup>
 </map>

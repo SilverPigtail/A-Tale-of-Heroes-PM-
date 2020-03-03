@@ -10,4 +10,7 @@
     <string name="labelPassoword">Password:</string>
     <string name="loginButtonText">Login</string>
     <string name="serviceLabelText">Service</string>
+    <string name="attackButtonText">Attack</string>
+    <string name="DefendButtonText">Defend</string>
+    <string name="FleeButtonText">Flee</string>
 </resources>
