@@ -14,6 +14,7 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.input.GestureDetector;
+import com.badlogic.gdx.maps.Map;
 import com.badlogic.gdx.maps.MapObject;
 import com.badlogic.gdx.maps.MapObjects;
 import com.badlogic.gdx.maps.MapProperties;
@@ -33,6 +34,7 @@ import com.badlogic.gdx.physics.box2d.FixtureDef;
 import com.badlogic.gdx.physics.box2d.PolygonShape;
 import com.badlogic.gdx.physics.box2d.Shape;
 import com.badlogic.gdx.physics.box2d.World;
+import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.InputListener;
 import com.badlogic.gdx.scenes.scene2d.Stage;
@@ -71,6 +73,8 @@ public class MainGameClass extends Game {
 
 	//private World world;
 	private Stage stg;
+	float w;
+	float h;
 
 	private MapObjects mapObjects;
 
@@ -79,6 +83,14 @@ public class MainGameClass extends Game {
 
 	private Music theme;
 
+
+
+	//
+	private Actor[]actor;
+	private Rectangle[] mapCollision;
+	private Rectangle characterHitbox;
+	private Map map;
+	//
 
 	public static final float unitScale = 1/16f;
 
@@ -92,11 +104,17 @@ public class MainGameClass extends Game {
 
 		// Inicializamos el stage y le damos un inputProcessor:
 
+
+
+
 		stg = new Stage(new ScreenViewport());
 		Gdx.input.setInputProcessor(stg);
 
-	    float w = Gdx.graphics.getWidth();
-	    float h = Gdx.graphics.getHeight();
+	   // float w = Gdx.graphics.getWidth();
+	    // float h = Gdx.graphics.getHeight();
+
+		w = Gdx.graphics.getWidth();
+		h = Gdx.graphics.getHeight();
 
 
 		TiledMap map = new TmxMapLoader().load("maps/TownMapDetailed.tmx");
@@ -115,6 +133,9 @@ public class MainGameClass extends Game {
 		mapHeightInTiles = properties.get("height", Integer.class);
 		mapWidthInPixels = mapWidthInTiles * tileWidth;
 		mapHeightInPixels = mapHeightInTiles * tileHeight;
+
+		w = w/ mapWidthInPixels;
+		h = h/ mapHeightInPixels;
 
 
 
@@ -141,6 +162,8 @@ public class MainGameClass extends Game {
 		System.out.println(mapHeightInPixels);
 		System.out.println(mapWidthInPixels);
 		escalatedGameCharacter = new CharacterEscalated(oCamera, map, 70, 70, mapWidthInPixels /10, mapHeightInPixels /10);
+
+
 
 
 
@@ -263,19 +286,31 @@ public class MainGameClass extends Game {
 		stg.addActor(tablePad);
 
 
-		mapObjects = map.getLayers().get("hitboxes").getObjects();
 
 
 
-		gmHitboxes = new GameHitboxes();
-		gmHitboxes.checkCollision(map, escalatedGameCharacter);
+		characterHitbox = new Rectangle();
+		characterHitbox.set(escalatedGameCharacter.getX(), escalatedGameCharacter.getY(), escalatedGameCharacter.getWidth(), escalatedGameCharacter.getHeight());
+		MapObjects mons= map.getLayers().get("colisiones").getObjects();
+		actor = new Actor[mons.getCount()];
 
+		mapCollision = new Rectangle[mons.getCount()];
 
-		for(int i = 0; i < gmHitboxes.getActors().length - 1; i++) {
-
-			stg.addActor(gmHitboxes.getActors()[i]);
+		for(int i = 0; i < mons.getCount(); i++) {
+			RectangleMapObject obj1 = (RectangleMapObject) mons.get(i);
+			Rectangle rect1 = obj1.getRectangle();
+			mapCollision[i] = rect1;
+			mapCollision[i].set(rect1.x * tileWidth, rect1.y * tileHeight, rect1.width * tileWidth, rect1.y * tileHeight);
+			actor[i] = new Actor();
+			actor[i].setBounds(rect1.x, rect1.y, rect1.width, rect1.height);
 
 		}
+
+
+		stg.setDebugAll(true);
+
+
+
 
 
 
@@ -309,20 +344,14 @@ public class MainGameClass extends Game {
 	@Override
 	public void dispose () {
 
+
 		theme.dispose();
 		escalatedGameCharacter.dispose();
 		mRenderer.dispose();
 	}
 
-	/*private static PolygonShape getRectangle(RectangleMapObject rectangleObject) {
-		Rectangle rectangle = rectangleObject.getRectangle();
-		PolygonShape polygon = new PolygonShape();
-		Vector2 size = new Vector2((rectangle.x + rectangle.width * 0.5f) /unitScale,
-				(rectangle.y + rectangle.height * 0.5f ) / unitScale);
-		polygon.setAsBox(rectangle.width * 0.5f /unitScale,
-				rectangle.height * 0.5f / unitScale,
-				size,
-				0.0f);
-		return polygon;
-	}*/
+
+
+
 }
+

@@ -45,8 +45,8 @@ public class CharacterEscalated extends Actor {
 
         isHB = new Boolean(false);
         this.gmHitboxes = new GameHitboxes();
-        gmHitboxes.checkCollision(map, this);
-        cRectangles = gmHitboxes.getRect();
+        //gmHitboxes.checkCollision(map, this);
+        //cRectangles = gmHitboxes.getRect();
 
         this.x = posX;
         this.y = posY;

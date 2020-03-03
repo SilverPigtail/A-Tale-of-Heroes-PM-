@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.2" tiledversion="1.3.1" orientation="orthogonal" renderorder="left-down" compressionlevel="0" width="35" height="35" tilewidth="32" tileheight="32" infinite="0" backgroundcolor="#000000" nextlayerid="8" nextobjectid="38">
+<map version="1.2" tiledversion="1.3.1" orientation="orthogonal" renderorder="left-down" compressionlevel="0" width="35" height="35" tilewidth="32" tileheight="32" infinite="0" backgroundcolor="#000000" nextlayerid="9" nextobjectid="44">
  <tileset firstgid="1" name="UnitedTiles" tilewidth="32" tileheight="32" tilecount="360" columns="8">
   <image source="../pngFiles/magecity.png" width="256" height="1450"/>
  </tileset>
@@ -204,7 +204,7 @@
 147,148,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 </data>
  </layer>
- <objectgroup color="#ff0000" id="7" name="hitboxes">
-  <object id="32" x="707" y="799" width="287" height="227"/>
+ <objectgroup id="8" name="colisiones">
+  <object id="43" x="894" y="599" width="119" height="109"/>
  </objectgroup>
 </map>

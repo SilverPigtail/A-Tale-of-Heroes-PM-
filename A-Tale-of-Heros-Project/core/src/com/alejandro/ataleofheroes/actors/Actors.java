@@ -21,7 +21,7 @@ public class Actors extends Actor {
     //protected String nombre;
     private ShapeRenderer shapeRenderer;
 
-    public Actors(String rutaTextura) {
+   /* public Actors(String rutaTextura) {
         //Cambio Posición del Sprite
         sprite=new Sprite(new Texture(rutaTextura));
         batch=new SpriteBatch();
@@ -68,6 +68,6 @@ public class Actors extends Actor {
             collYN=false;
         }
         return collYN;
-    }
+    }*/
 
 }
