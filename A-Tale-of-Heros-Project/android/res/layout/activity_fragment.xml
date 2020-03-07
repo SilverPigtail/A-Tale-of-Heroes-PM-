@@ -5,11 +5,9 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-
-    <Button
-        android:id="@+id/button"
+    <ImageView
+        android:id="@+id/imageView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Button" />/>
-
+        android:layout_height="match_parent"
+        app:srcCompat="@drawable/gameicon" />
 </LinearLayout>

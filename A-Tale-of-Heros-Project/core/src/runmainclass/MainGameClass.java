@@ -11,6 +11,7 @@ import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.input.GestureDetector;
@@ -44,6 +45,7 @@ import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.utils.viewport.ScreenViewport;
 
+import databases.DatabaseGame;
 import gameobjects.Character;
 import gameobjects.CharacterEscalated;
 
@@ -83,6 +85,8 @@ public class MainGameClass extends Game {
 
 	private Music theme;
 
+	private int stepAmmount;
+	private DatabaseGame mDatabase;
 
 
 	//
@@ -92,6 +96,8 @@ public class MainGameClass extends Game {
 	private Map map;
 	//
 
+	private Batch textBatch;
+
 	public static final float unitScale = 1/16f;
 
 
@@ -99,11 +105,17 @@ public class MainGameClass extends Game {
 			mapWidthInTiles, mapHeightInTiles,
 			mapWidthInPixels, mapHeightInPixels;
 
+
+	public MainGameClass(DatabaseGame db) {
+		mDatabase = db;
+	}
+
 	@Override
 	public void create () {
 
-		// Inicializamos el stage y le damos un inputProcessor:
+		stepAmmount = 0;
 
+		// Inicializamos el stage y le damos un inputProcessor:
 
 
 
@@ -163,6 +175,8 @@ public class MainGameClass extends Game {
 		System.out.println(mapWidthInPixels);
 		escalatedGameCharacter = new CharacterEscalated(oCamera, map, 70, 70, mapWidthInPixels /10, mapHeightInPixels /10);
 
+		//mDatabase.load();
+
 
 
 
@@ -175,6 +189,15 @@ public class MainGameClass extends Game {
 			public void touchUp(InputEvent event, float x, float y, int pointer, int button) {
 
 				escalatedGameCharacter.move('r');
+				stepAmmount += 1;
+				mDatabase.save(stepAmmount);
+
+				if(mDatabase.load() == 10) {
+					System.exit(0);
+				}
+
+				Gdx.app.log("pasos", "Pasos: " + mDatabase.load());
+
 
 
 
@@ -201,6 +224,13 @@ public class MainGameClass extends Game {
 			public void touchUp(InputEvent event, float x, float y, int pointer, int button) {
 
 				escalatedGameCharacter.move('l');
+				stepAmmount += 1;
+				mDatabase.save(stepAmmount);
+
+				if(mDatabase.load() == 10) {
+					System.exit(0);
+				}
+
 
 
 
@@ -229,6 +259,15 @@ public class MainGameClass extends Game {
 			public void touchUp(InputEvent event, float x, float y, int pointer, int button) {
 
 				escalatedGameCharacter.move('u');
+				stepAmmount += 1;
+				mDatabase.save(stepAmmount);
+
+				if(mDatabase.load() == 10) {
+					System.exit(0);
+				}
+
+
+
 
 
 
@@ -254,6 +293,12 @@ public class MainGameClass extends Game {
 			public void touchUp(InputEvent event, float x, float y, int pointer, int button) {
 
 				escalatedGameCharacter.move('d');
+				stepAmmount += 1;
+				mDatabase.save(stepAmmount);
+
+				if(mDatabase.load() == 10) {
+					System.exit(0);
+				}
 
 
 
@@ -289,6 +334,8 @@ public class MainGameClass extends Game {
 
 
 
+		stg.setDebugAll(true);
+
 		characterHitbox = new Rectangle();
 		characterHitbox.set(escalatedGameCharacter.getX(), escalatedGameCharacter.getY(), escalatedGameCharacter.getWidth(), escalatedGameCharacter.getHeight());
 		MapObjects mons= map.getLayers().get("colisiones").getObjects();
@@ -307,9 +354,9 @@ public class MainGameClass extends Game {
 		}
 
 
-		stg.setDebugAll(true);
 
 
+		Gdx.app.log("etiquetaCaminar", "pasos: " + stepAmmount);
 
 
 
@@ -331,12 +378,12 @@ public class MainGameClass extends Game {
 		Gdx.gl.glClearColor(1, 0, 0, 1);
 		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 
-
 		mRenderer.setView(oCamera);
 		mRenderer.render();
 		escalatedGameCharacter.draw();
 		stg.act();
 		stg.draw();
+
 
 
 	}

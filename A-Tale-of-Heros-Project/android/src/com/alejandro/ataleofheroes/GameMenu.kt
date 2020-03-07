@@ -5,7 +5,10 @@ import android.support.constraint.ConstraintLayout
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Process
+import android.support.v4.app.FragmentManager
+import android.support.v4.app.FragmentTransaction
 import android.support.v7.app.AlertDialog
+import android.view.SurfaceControl
 import android.view.View
 import services.AlertService
 
@@ -14,10 +17,21 @@ import services.AlertService
  */
 class GameMenu : AppCompatActivity() {
 
+    private val manager: FragmentManager by lazy { this.supportFragmentManager }
+    private val fragment: FragmentActivity by lazy { FragmentActivity() }
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_game_menu)
+
+        var transaction: FragmentTransaction = manager.beginTransaction()
+
+        transaction.replace(R.id.fragmentLayout, fragment, "logo")
+        transaction.addToBackStack("logo")
+
+        transaction.commit()
+
 
 
     }
@@ -61,4 +75,6 @@ class GameMenu : AppCompatActivity() {
 
 
     }
+
+
 }
