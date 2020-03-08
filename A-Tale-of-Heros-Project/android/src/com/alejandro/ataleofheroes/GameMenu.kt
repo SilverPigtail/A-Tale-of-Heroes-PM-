@@ -10,6 +10,8 @@ import android.support.v4.app.FragmentTransaction
 import android.support.v7.app.AlertDialog
 import android.view.SurfaceControl
 import android.view.View
+import databases.DatabaseGame
+import kotlinx.android.synthetic.main.activity_game_menu.*
 import services.AlertService
 
 /***
@@ -19,7 +21,6 @@ class GameMenu : AppCompatActivity() {
 
     private val manager: FragmentManager by lazy { this.supportFragmentManager }
     private val fragment: FragmentActivity by lazy { FragmentActivity() }
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -50,7 +51,6 @@ class GameMenu : AppCompatActivity() {
         this.startActivity(i)
 
     }
-
     /***
      * This funcition allows the user to close the app from the activity just pressing the back button from Android.
      */

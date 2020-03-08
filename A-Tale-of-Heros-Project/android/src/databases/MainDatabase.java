@@ -5,6 +5,10 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
+/***
+ * This class models the database of the game, allow it to get the parameters from the database
+ * interface.
+ */
 public class MainDatabase implements DatabaseGame {
 
     private DBOpenHelper oHelper;
