@@ -40,6 +40,9 @@ public class CharacterEscalated extends Actor {
     float widthpj, heightpj;
 
 
+    public Rectangle getHitbox(){
+          return cSprite.getBoundingRectangle();
+    }
 
     public CharacterEscalated(OrthographicCamera camera, TiledMap map, int posX, int posY, float pjWidth, float pjHeight) {
 

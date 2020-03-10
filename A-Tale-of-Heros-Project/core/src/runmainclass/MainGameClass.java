@@ -29,6 +29,7 @@ import com.badlogic.gdx.maps.tiled.renderers.OrthogonalTiledMapRenderer;
 import com.badlogic.gdx.math.Polygon;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
+import com.badlogic.gdx.math.Vector3;
 import com.badlogic.gdx.physics.box2d.Body;
 import com.badlogic.gdx.physics.box2d.BodyDef;
 import com.badlogic.gdx.physics.box2d.FixtureDef;
@@ -58,6 +59,9 @@ public class MainGameClass extends Game {
 
 	private OrthogonalTiledMapRenderer mRenderer;
 	private OrthographicCamera oCamera;
+	private Rectangle rectPriv;
+	private Rectangle rectPriv2;
+	private Rectangle rectPriv3;
 
 	private static int WIDTH;
 	private static int HEIGHT;
@@ -91,7 +95,10 @@ public class MainGameClass extends Game {
 
 	//
 	private Actor[]actor;
+	private Actor[]actor2;
 	private Rectangle[] mapCollision;
+	private Rectangle[] mapCollision2;
+	private Rectangle[] getMapCollision;
 	private Rectangle characterHitbox;
 	private Map map;
 	//
@@ -192,9 +199,9 @@ public class MainGameClass extends Game {
 				stepAmmount += 1;
 				mDatabase.save(stepAmmount);
 
-				if(mDatabase.load() == 10) {
+				/*if(mDatabase.load() == 10) {
 					System.exit(0);
-				}
+				}*/
 
 				Gdx.app.log("pasos", "Pasos: " + mDatabase.load());
 
@@ -227,9 +234,9 @@ public class MainGameClass extends Game {
 				stepAmmount += 1;
 				mDatabase.save(stepAmmount);
 
-				if(mDatabase.load() == 10) {
+				/*if(mDatabase.load() == 10) {
 					System.exit(0);
-				}
+				}*/
 
 
 
@@ -262,9 +269,9 @@ public class MainGameClass extends Game {
 				stepAmmount += 1;
 				mDatabase.save(stepAmmount);
 
-				if(mDatabase.load() == 10) {
+				/*if(mDatabase.load() == 10) {
 					System.exit(0);
-				}
+				}*/
 
 
 
@@ -296,9 +303,9 @@ public class MainGameClass extends Game {
 				stepAmmount += 1;
 				mDatabase.save(stepAmmount);
 
-				if(mDatabase.load() == 10) {
+				/*if(mDatabase.load() == 10) {
 					System.exit(0);
-				}
+				}*/
 
 
 
@@ -342,18 +349,34 @@ public class MainGameClass extends Game {
 		actor = new Actor[mons.getCount()];
 
 		mapCollision = new Rectangle[mons.getCount()];
-
 		for(int i = 0; i < mons.getCount(); i++) {
 			RectangleMapObject obj1 = (RectangleMapObject) mons.get(i);
 			Rectangle rect1 = obj1.getRectangle();
+			rectPriv=rect1;
+            //REajustar segun reglas de 3
 			mapCollision[i] = rect1;
-			mapCollision[i].set(rect1.x * tileWidth, rect1.y * tileHeight, rect1.width * tileWidth, rect1.y * tileHeight);
+			mapCollision[i].set((Gdx.graphics.getWidth() * rectPriv.x)/1120,  (Gdx.graphics.getWidth() * 119)/1120, rect1.width , rect1.height );
 			actor[i] = new Actor();
 			actor[i].setBounds(rect1.x, rect1.y, rect1.width, rect1.height);
 
 		}
 
 
+		MapObjects mons2= map.getLayers().get("colisiones2").getObjects();
+		actor2 = new Actor[mons2.getCount()];
+
+		mapCollision2 = new Rectangle[mons2.getCount()];
+		for(int i = 0; i < mons2.getCount(); i++) {
+			RectangleMapObject obj2 = (RectangleMapObject) mons2.get(i);
+			Rectangle rect2 = obj2.getRectangle();
+			rectPriv2=rect2;
+			//REajustar segun reglas de 3
+			mapCollision2[i] = rect2;
+			mapCollision2[i].set((Gdx.graphics.getWidth() * rectPriv2.x)/1120,  (Gdx.graphics.getWidth() * 119)/1120, rect2.width , rect2.height );
+			actor2[i] = new Actor();
+			actor2[i].setBounds(rect2.x, rect2.y, rect2.width, rect2.height);
+
+		}
 
 
 		Gdx.app.log("etiquetaCaminar", "pasos: " + stepAmmount);
@@ -381,6 +404,19 @@ public class MainGameClass extends Game {
 		mRenderer.setView(oCamera);
 		mRenderer.render();
 		escalatedGameCharacter.draw();
+        Gdx.app.log("Coordenada Jugador",escalatedGameCharacter.getHitbox().toString());
+        Gdx.app.log("Coordenada Rectangulo",rectPriv.toString());
+		Gdx.app.log("Coordenada Rectangulo 2",rectPriv2.toString());
+		if (escalatedGameCharacter.getHitbox().overlaps(rectPriv)) {
+			Gdx.app.log("Colision","Is colliding with rectangle 1");
+			escalatedGameCharacter.move('l');
+
+		}
+
+		if (escalatedGameCharacter.getHitbox().overlaps(rectPriv2)) {
+			Gdx.app.log("OJO_2","JUGADOR COLISIONA CON RECTANGULO 2");
+            escalatedGameCharacter.move('l');
+		}
 		stg.act();
 		stg.draw();
 
