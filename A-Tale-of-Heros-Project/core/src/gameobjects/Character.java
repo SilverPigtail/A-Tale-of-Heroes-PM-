@@ -10,7 +10,8 @@ import com.badlogic.gdx.maps.tiled.TiledMapTileLayer;
 import com.badlogic.gdx.math.Vector3;
 
 /***
- * Unused class, this class will be deleted.
+ * Unused class I can't delete this because android studio doesn't let me to, but this class allows the
+ * program to create the character before the 'CharacterEscalated' class was created
  */
 public class Character {
 

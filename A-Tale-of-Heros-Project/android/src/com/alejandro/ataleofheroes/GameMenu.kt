@@ -16,12 +16,20 @@ import services.AlertService
 
 /***
  * Game Menu class. This is the menu that appears before the game starts and execute the MainGameClass.
+ * manager -> FragmentManager parameter that allows the fragment add, remove or replace the fragment in the layout
+ *  fragment -> The FragmentActivity that is inflated in the game menu class.
+ *
  */
 class GameMenu : AppCompatActivity() {
+
 
     private val manager: FragmentManager by lazy { this.supportFragmentManager }
     private val fragment: FragmentActivity by lazy { FragmentActivity() }
 
+    /***
+     * OnCreate function that creates the layout of the activity and implements the fragment's transactions
+     * in this activity.
+     */
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_game_menu)

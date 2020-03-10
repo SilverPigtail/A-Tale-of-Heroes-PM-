@@ -8,6 +8,9 @@ import com.badlogic.gdx.backends.android.AndroidApplicationConfiguration;
 import databases.MainDatabase;
 import runmainclass.MainGameClass;
 
+/***
+ * This class execute te game menu class that is an android activity.
+ */
 public class AndroidLauncher extends AndroidApplication {
 	@Override
 	protected void onCreate (Bundle savedInstanceState) {

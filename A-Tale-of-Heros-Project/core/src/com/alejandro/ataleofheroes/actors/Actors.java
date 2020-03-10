@@ -10,7 +10,11 @@ import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 
 /***
- * This class creates the Actor that casts the main Character hitbox.
+ * This class creates the Actor that casts the main Character hitbox. But, mostly, this class allows
+ * the character to move generating the sprite actor.
+ * sprite -> The sprite of the character
+ * dimensions -> The dimensions of the character
+ * batch -> The batch of the sprite
  */
 public class Actors extends Actor {
 
@@ -21,57 +25,39 @@ public class Actors extends Actor {
     //protected String nombre;
     private ShapeRenderer shapeRenderer;
 
-   public Actors(String rutaTextura) {
-        //Cambio Posición del Sprite
-        sprite=new Sprite(new Texture(rutaTextura));
-        batch=new SpriteBatch();
+    /***
+     * This function allows the character to move
+     * @param texturePath -> The texture of the sprite with his size
+     */
+   public Actors(String texturePath) {
+        sprite = new Sprite(new Texture(texturePath));
+        batch = new SpriteBatch();
         sprite.setBounds(30,23, Gdx.graphics.getWidth()* 10,Gdx.graphics.getHeight()* 10);
         this.setSize(sprite.getWidth(),sprite.getHeight());
-        this.setPosition(sprite.getX(),sprite.getY()); //Cambio posición del actor
+        this.setPosition(sprite.getX(),sprite.getY());
         this.setOrigin(this.sprite.getWidth()/2,this.sprite.getHeight()/2);
         sprite.setOrigin(this.getOriginX(),this.getOriginY());
     }
 
 
-    public Actors(String rutaTextura, float x, float y, float posAlt, float posAnc) {
-        //shapeRenderer=new ShapeRenderer();
-        //Cambio Posición del Sprite
-        sprite=new Sprite(new Texture(rutaTextura));
+    /***
+     * This function allows the program to create actors.
+     * @param texturePath -> the texture of the actor
+     * @param x -> the 'x' position of the actor
+     * @param y -> the 'y' position of the actor
+     * @param posAlt -> the position in tiles in the X axis of the actor
+     * @param posAnc -> the position in tiles in the Y axis of the actor
+     */
+    public Actors(String texturePath, float x, float y, float posAlt, float posAnc) {
+
+        sprite=new Sprite(new Texture(texturePath));
         dimensions=new Rectangle((int)x,(int)y,(int)posAlt,(int)posAnc);
         batch=new SpriteBatch();
         sprite.setBounds(x,y, x,y);
-        //this.setSize(Gdx.graphics.getWidth()100,Gdx.graphics.getHeight()100);
         sprite.setPosition(posAnc,posAlt);
-        //Cambio posición del actor
-        //this.setOrigin(this.sprite.getWidth()/2,this.sprite.getHeight()/2);
         sprite.setOrigin(this.getOriginX(),this.getOriginY());
-
-
-
-    }
-    public void dibujar(){
-        batch.begin();
-        sprite.draw(batch);
-        batch.end();
-
-    }
-    public Rectangle getHitBox(){
-        return sprite.getBoundingRectangle();
     }
 
-    public boolean checkCollision(Actors c){
-        boolean overlaps=getHitBox().overlaps(c.getHitBox());
-        if(overlaps&&collYN==false){
-            collYN=true;
-            Gdx.app.log("Colisionando","con "+c.getClass().getName());
-        }else if(!overlaps){
-            collYN=false;
-        }
-        return collYN;
-    }
 
-    @Override
-    public void draw(Batch batch, float parentAlpha) {
-        super.draw(batch, parentAlpha);
-    }
+
 }
